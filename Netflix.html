@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Netflix</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ .section1{
+    background-image: url(cover.jpg);
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        }
+        .section1::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            background-color: black;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.5;
+
+        }
+        .section1::after{
+            position: absolute;
+            bottom:0;
+            height:90px;
+            width:100%;
+            background-color: rgb(0, 0, 0);
+            border-top: 6px solid red;
+            border-radius: 50% 50% 0 0;
+            box-shadow: inset 0 2px 5px blue;
+            content:'';
+        }
+.head1{
+            text-shadow: 0 0 20px black;
+            font-weight: 1000;
+            position: relative;
+            z-index:10px;
+        }
+.sub-heading{
+font-size: 25px;
+font-weight: 600;
+text-shadow: 0 0 20px black;
+position: relative;
+z-index:10px;
+        }
+.line{
+    text-shadow: 0 0 20px black;
+    font-size: 17px;
+    font-weight: 500;
+    position: relative;
+    z-index:10px;
+
+} 
+.input-grp{
+    width: 100%;
+    justify-content: space-around;  
+    border: 2px soild white; 
+    position: relative;
+    z-index:10px;
+   
+}
+.email{
+    width: 290px;
+    height: 50px;
+    padding: 4px 3px;
+    /* border-radius: 10px ; */
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    position: relative;
+    z-index:10px;
+
+}
+::placeholder{
+    color: rgb(187, 182, 182);
+}
+.getstarted{
+width: 30%;
+height: 40px;
+font-size: 20px;
+font-weight: 700;
+z-index:10px;
+}
+.logo{
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    width: 200px;
+}
+.topright{
+    position: absolute;
+    top: 40px;
+    right: 2px;
+    width: 250px;
+    height: 100px;
+    z-index:10px;
+}
+
+.section2{
+            background-color: black;
+            width:100vw;
+            min-height:300vh;
+        }
+
+.s2head{
+    color: white;
+            margin-left: 60px;
+            margin-bottom: 15px;
+}
+.trending{
+            display:flex;
+            overflow: scroll;
+            height:auto;
+            padding-top: 20px;
+            /* padding-bottom: 20px;
+            padding-left: 60px;
+            padding-right: 60px; */
+            margin-bottom: 30px;
+            margin-left: 90px;
+            margin-right: 90px;
+
+}
+.trending::-webkit-scrollbar {
+    display: none;
+}
+.box{
+            position:relative;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            cursor:pointer;
+            transition:0.5s all ease;
+        }
+        .box:hover{
+            scale:1.04;
+        }
+        .b1::after , .b2::after, .b3::after, .b4::after, .b5::after, .b6::after, .b7::after, .b8::after, .b9::after, .b10::after{
+            position:absolute;
+            left:9px;
+            bottom:-2px;
+            font-size: 110px;
+            font-weight: 700;
+            -webkit-text-stroke: 2px rgb(232, 227, 227);
+            color: black;
+            content: '1';
+        }
+        .b2::after{
+            content:'2';
+        }
+        .b3::after{
+            content:'3';
+        }
+        .b4::after{
+            content:'4';
+        }
+        .b5::after{
+            content:'5';
+        }
+        .b6::after{
+            content:'6';
+        }
+        .b7::after{
+            content:'7';
+        }
+        .b8::after{
+            content:'8';
+        }
+        .b9::after{
+            content:'9';
+        }
+        .b10::after{
+            content:'10';
+        }
+        .rad{
+            border-radius: 12px;
+            margin-left: 40px;
+        }
+.rtw{
+    font-size: 25px;
+    color: white;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.card {
+            width: 80%;
+            margin: auto;
+            background-color: black;
+        }
+
+        .acc {
+            width: 75%;
+            margin: auto;
+        }
+
+        .ac {
+            width: 100%;
+            border-radius: 2px;
+            background-color: rgb(128, 128, 128);
+        }
+/* .reason{
+           width: 300px ;
+            height:300px;
+            background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(42,1,1,1) 78%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            position:relative;
+            margin-left: 100px;
+            margin-right: 100px;
+        } */
+        /* .img{
+            position: absolute;
+            bottom: 20px;
+            right:10px;
+        } */
+.freq{
+    margin-left: 100px;
+    margin-top: 50px;
+    color: white;
+}
+.ready{
+    margin-top: 50px;
+}
+.footer1{
+            margin-top: 30px;
+            width:85%;
+            color: gray;
+        }
+        .fc{
+            margin-top: 40px;
+            height:180px;
+            display:flex;
+            flex-direction:column;
+            flex-wrap: wrap;
+            gap:15px;
+            /* color: white; */
+            font-weight: 450;
+            font-size: 15px;
+            margin-bottom:50px;
+            padding: 10px;
+        }
+        .last{
+            margin-top: 30px;
+        }
+.acc{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.q1{
+    width: 80vw;
+    height: auto;
+    padding: 15px;
+    background-color: rgb(65, 61, 61);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 100px;
+    margin-right: 50px;
+    /* margin-top: 10px; */
+}
+.q1:hover{
+    background-color: rgb(222, 222, 222);
+}
+.plus{
+    font-size:50px;
+    /* font-weight: 2; */
+    margin-right: 30px;
+}
+.text{
+    font-size: 25px;
+    font-weight: 500;
+}
+.parent{
+    display: none;
+
+}
+@media(max-width:1000px)
+        {
+            
+            .head1{
+                font-size: 40px;
+            }
+            .sub-heading{
+                font-size: 25px;
+            }
+            .input-group{
+                width:85%;
+            }
+        }
+@media(max-width:700px)
+        {
+            .getstarted{
+                width:35%;
+                font-size: 14px;
+                margin-bottom: 50px;
+            }
+        }
+        @media(max-width:750px)
+        { 
+            .reasons{
+                display:flex;
+                flex-wrap: wrap;
+                width:90%;
+            }
+            .fc{
+                height:400px;
+                padding:10px;
+            }
+            .btn{
+                display: none;
+            }
+            .red{
+             display: block;
+            }
+            .parent{
+    width: 100vw;
+    height: 40px;
+    background-color: red;
+    font-size: 30px;
+    font-weight: 400;
+    display: flex;
+    color: white;
+    justify-content: center;
+
+}
+.q1{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+        }
+    </style>
+</head>
+<body>
+    <!-- section1 -->
+    <div class="container-fluid section1 d-flex justify-content-center align-items-center ">
+        <div class=" d-flex justify-content-center align-items-center flex-column "> 
+            <h1 class="head1 text-light">Unlimited movies,TV </h1>
+            <h1 class="head1 text-light">Shows and more</h1>
+            <p class="sub-heading text-light ">Starts at $149. Cancel at any time</p>
+            <p class="line text-light"> Ready to watch? Enter your email to create or restart your membership.</p>
+            
+            <div class="d-flex justify-content-center align-items-center input-grp gap-4">                
+                    <form action="">
+                        <input type="email" class="email" placeholder=" Email address">
+                    </form>
+                <button class="btn btn-danger get-started ">Get Started > </button>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="Netflix_Logo_PMS.png" width="200px" alt="">
+            </div>
+            <div class="topright  d-flex">
+        <div>
+            <div class="dropdown d-flex gap-3">
+                <button class="btn btn-transperent dropdown-toggle text-light border-white" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-language"></i> English
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">English</a></li>
+                  <li><a class="dropdown-item" href="#">Hindi</a></li>
+                  <li><a class="dropdown-item" href="#">Telugu</a></li>
+                </ul>
+                <div>
+                    <button class="btn btn-danger">Sign in</button>
+                </div>
+              </div>
+            </div>
+        </div>
+            </div>
+
+
+
+<!-- section2 -->
+<div class="container-fluid section2 ">
+ <h1 class="s2head text-light">Trending Now</h1>
+
+ <!-- trending -->
+ <div class="trending px-5 p-4 ">
+    <div class="b1 box ">
+        <img src="b1 - Copy.jpg" width="180px"class="rad"   alt="">
+    </div>
+    <div class="b2 box ">
+        <img src="b2.jpg" width="180px" class="rad"  alt="">
+    </div>
+    <div class="b3 box ">
+        <img src="b3.jpg" width="180px" class="rad" alt="">
+    </div>
+    <div class="b4  box ">
+        <img src="b4.jpg" width="180px" class="rad" alt="">
+    </div>
+    <div class="b5 box ">
+        <img src="b5.jpg" width="180px" class="rad" alt="">
+    </div>
+    <div class="b6  box ">
+        <img src="b6.jpg" width="180px" class="rad" alt="">
+    </div>
+    <div class="b7 box ">
+        <img src="b7.jpg" width="180px" class="rad" alt="">
+    </div>
+    <div class="b8 box ">
+        <img src="b8.jpeg"  width="180px" class="rad" alt="">
+    </div>
+    <div class="b9 box ">
+        <img src="b9.jpg" width="180px" class="rad" alt="">
+    </div>
+    <div class="b10 box ">
+        <img src="b10.jpeg" width="180px" class="rad" alt="">
+    </div>
+</div>
+
+   
+
+<!-- section3 -->
+
+<h1 class="rtw mt-4 mb-4">More reasons to watch</h1>
+    <div class="card d-flex flex-row gap-4 align-items-center justify-content-center my-5 flex-wrap flex-sm-column flex-lg-row flex-row">
+        <div class="c c1">
+            <img src="i1.png" style="border-radius: 10px;width: 270px" alt="">
+        </div>
+        <div class="c c1">
+            <img src="i2.png" style="border-radius: 10px;width: 270px" alt="">
+        </div>
+        <div class="c c1">
+            <img src="i3.png" style="border-radius: 10px;width: 270px" alt="">
+        </div>
+        <div class="c c1">
+            <img src="i4.png" style="border-radius: 10px;width: 270px" alt="">
+        </div>
+    <!-- <div class="reason">
+        <h4 ">Download your shows to watch offline</h4>
+        <p class="mt-4">Save your favourites easily and always have something to watch.</p>
+        <img src="2.png" class="img" height="75px" alt="">
+    </div>
+    <div class="reason">
+        <h4 >Watch everywhere</h4>
+        <p class="mt-4">Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
+        <img src="3.png" class="img" height="75px" alt="">
+    </div>
+    <div class="reason">
+        <h4 >Create profiles for kids</h4>
+        <p class="mt-4">Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+        <img src="4.png" class="img" height="75px" alt="">
+    </div> -->
+</div>
+
+<!-- section4 -->
+  
+<h2 class="freq mb-4 ">Frequently Asked Questions</h2>
+
+<div class="q1">
+    <p class="text">What is Netflix?</p>
+    <i class="fa-solid fa-plus plus"></i>
+</div>
+<br>
+<div class="q1">
+    <p class="text" >How much does Netflix cost?</p>
+    <i class="fa-solid fa-plus plus"></i>
+</div>
+<br>
+<div class="q1">
+    <p class="text">Where can I watch?</p>
+    <i class="fa-solid fa-plus plus"></i>
+</div>
+<br>
+<div class="q1">
+    <p class="text">How do I cancel?</p>
+    <i class="fa-solid fa-plus plus"></i>
+</div>
+<br>
+<div class="q1">
+    <p class="text">What can I watch on Netflix?</p>
+    <i class="fa-solid fa-plus plus"></i>
+</div>
+<br>
+<div class="q1">
+    <p class="text">Is Netflix good for kids?</p>
+    <i class="fa-solid fa-plus plus"></i>
+</div>
+
+
+
+<!-- footer -->
+
+<div class="membership container d-flex justify-content-center align-items-center flex-column">
+    <p class="text-light ready">Ready to watch? Enter your email to create or restart your membership.</p>
+    <div class="d-flex justify-content-center align-items-center input-grp gap-4">                
+        <form action="">
+            <input type="email" class="email" placeholder=" Email address">
+        </form>
+    <button class="btn btn-danger getstarted ">Get Started > </button>
+    </div>
+</div>
+
+<div class="footer1 container">
+    <h5 c >Questions? Call <u>000-800-919-1743</u></h5>
+    <div class="fc">
+        <u>FAQ</u>
+        <u>Account</u>
+        <u>Investor Relations</u>
+        <u>Ways to Watch</u>
+        <u>Privacy</u>
+        <u>Corporate Information</u>
+        <u>Speed Test</u>
+        <u>Only on Netflix</u>
+        <u>Help Centre</u>
+        <u>Media Centre</u>
+        <u>Jobs</u>
+        <u>Terms of Use</u>
+        <u>Cookie Preferences</u>
+        <u>Contact Us</u>
+        <u>Legal Notices</u>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle py-2 fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-language"></i> English
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+            <li><a class="dropdown-item" href="#">Telugu</a></li>
+          </ul>
+          <div>
+          
+    </div>
+    <p class="last">Netflix India</p>
+</div>
+</div>
+<div class="parent">
+   <p>Sign in</p>
+</div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
