@@ -130,7 +130,7 @@ z-index:10px;
             padding-left: 60px;
             padding-right: 60px; */
             margin-bottom: 30px;
-            margin-left: 90px;
+            margin-left: 50px;
             margin-right: 90px;
 
 }
@@ -242,21 +242,36 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(42,1,1,1) 78%);
             width:85%;
             color: gray;
         }
-        .fc{
-            margin-top: 40px;
-            height:180px;
-            display:flex;
-            flex-direction:column;
-            flex-wrap: wrap;
-            gap:15px;
-            /* color: white; */
-            font-weight: 450;
+        .f {
+            color: rgba(255, 255, 255, 0.703);
             font-size: 15px;
-            margin-bottom:50px;
-            padding: 10px;
+            font-weight: 400;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            margin-top: 50px;
+           margin-bottom: 50px;
+
+        }
+
+        .col {
+
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+        }
+        .que {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
         }
         .last{
             margin-top: 30px;
+            margin-bottom: 15px;
         }
 .acc{
     margin-left: 40px;
@@ -512,22 +527,30 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(42,1,1,1) 78%);
 
 <div class="footer1 container">
     <h5 c >Questions? Call <u>000-800-919-1743</u></h5>
-    <div class="fc">
-        <u>FAQ</u>
-        <u>Account</u>
-        <u>Investor Relations</u>
-        <u>Ways to Watch</u>
-        <u>Privacy</u>
-        <u>Corporate Information</u>
-        <u>Speed Test</u>
-        <u>Only on Netflix</u>
-        <u>Help Centre</u>
-        <u>Media Centre</u>
-        <u>Jobs</u>
-        <u>Terms of Use</u>
-        <u>Cookie Preferences</u>
-        <u>Contact Us</u>
-        <u>Legal Notices</u>
+    <div class="f">
+        <div class="col">
+            <u class="que">FAQ</u>
+            <u class="que">Investor Relations</u>
+            <u class="que">Privacy</u>
+            <u class="que">Speed test</u>
+        </div>
+        <div class="col">
+            <u class="que">Help Centre</u>
+            <u class="que">Jobs</u>
+            <u class="que">Cookie Preferences</u>
+            <u class="que">Legal Notices</u>
+        </div>
+        <div class="col">
+            <u class="que">Account</u>
+            <u class="que">Ways to Watch</u>
+            <u class="que">Corporate Information</u>
+            <u class="que">Only on Netflix</u>
+        </div>
+        <div class="col">
+            <u class="que">Media Centre</u>
+            <u class="que">Terms of Use</u>
+            <u class="">Contact Us</u>
+        </div>
     </div>
     <div class="dropdown">
         <button class="btn btn-outline-light dropdown-toggle py-2 fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
